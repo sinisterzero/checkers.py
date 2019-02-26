@@ -1,18 +1,19 @@
 from graphics import*
+
 #window size
-winX = 800
-check = True
+print("input the size of the board")
+winX = int(input())
 #color for red and black
 red = 244
 #create window
 wind = GraphWin("checker", winX, winX)
 wind.setCoords(0, 0, winX, winX)
 #cords
-ly = 100
-size = 75
+ly = winX/10
+size = winX/10
 #create board
 for j in range (8):
-    lx = 100
+    lx = winX/10
     #change color of start square
     if j %2 == 0:
         red = 0
@@ -23,7 +24,7 @@ for j in range (8):
         rSqu = Polygon(Point(lx,ly), Point(lx,ly + size), Point(lx + size,ly + size), Point(lx + size,ly))
         rSqu.setFill(color_rgb(red,0,0))
         rSqu.draw(wind)
-        lx += 75
+        lx += winX/10
         if red == 0:
             red = 122
         if red == 244:
